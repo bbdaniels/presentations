@@ -25,43 +25,69 @@ class: center, middle
 
 ---
 
-# Outline
+# Preview
 
-**Introduction**
+**Why write Stata commands?**
+
+- Thinking about standardization and improvement through code
 
 **DIME Analytics packages**
-1. `ietoolkit`
-1. `iefieldkit`
+- `ietoolkit`
+- `iefieldkit`
 
 **Ben's Stata commands**
-1. GitHub resources
-1. Individual commands tour
+- GitHub resources
+- Individual commands
 
-**Discussion**
+**Discussion:** What works for Georgetown?
+
+**Disclaimer:** _Much of these thoughts and work are respectfully borrowed
+from the great minds of [Luiza Cardoso de Andrade](https://github.com/luizaandrade)
+and [Kristoffer Bjarkefur](https://github.com/kbjarkefur) from the DIME Analytics team..._
 
 ---
 
-# Introduction
-
-Why write Stata commands?
+# Why write Stata commands?
 
 Two major components: _workflow_ standardization and _output_ standardization
 
-Workflow standardization:
+**Workflow standardization**
 
 - **Less code** for same result
 - **Same code** for same result
 
-Output standardization:
+**Output standardization**
 
 - Less code for **same result**
 - Same code for **same result**
 
 ---
 
-# Tradeoffs
+# Why write Stata commands?
 
-Why not write Stata commands?
+Two major goals: raising the _floor_ and raising the _ceiling_
+
+**Raising the floor**
+
+New coders, even with low skills, can produce code and outputs
+at the expected level of quality.
+These kinds of code make it easy to learn fast
+from the code of others on the team.
+Good examples: folder structure, balance tables, etc.
+
+**Raising the ceiling**
+
+Cutting-edge techniques eventually need to be
+generalized in code so that their inputs,
+outputs, and processes do not need to be hard-coded
+every time they need to be done.
+Good examples: specification curves, Benjamini-Hochberg significance tests, etc.
+
+_These two goals map roughly onto the next two sections..._
+
+---
+
+# Why _not_ write Stata commands?
 
 Two major tradeoffs: less learning at low level and less flexibility
 
@@ -183,6 +209,97 @@ iecodebook append "survey1.dta" "survey2.dta" using "codebook.xlsx"
 ```
 
 <img src="Append-complete.png" alt="drawing" width="800"/>
+
+---
+
+class: center, middle
+
+# Ben's Stata commands
+
+---
+
+# Ben's Stata commands
+
+**Why do I write Stata commands?**
+
+- I see myself as [lazy, dumb, and successful](https://blog.codinghorror.com/how-to-be-lazy-dumb-and-successful/)
+- I don't want to work very hard
+- I am not bright enough to see how computers will handle new code
+- Remembering things is hard too
+- So I write simple, reusable code and try do document it really well
+
+**Resources**
+
+- [Blogpost](https://blogs.worldbank.org/opendata/making-analytics-reusable)
+- [Homepage](https://www.benjaminbdaniels.com)
+- [GitHub](https://github.com/bbdaniels/stata)
+- [Lightning Talk: What is DIME Analytics?](https://www.benjaminbdaniels.com/talks/dime-analytics/)
+
+---
+
+# Ben's Stata commands
+
+`net from https://github.com/bbdaniels/stata/raw/master/`
+
+- `betterbar`: The bar graphs you always wanted
+
+- `sumstat `: Summary statistics with subgroups
+
+- `specc`: Specification curves automagically
+
+- `forest`: Multiple hypothesis visualization and adjustment
+
+- `dta2kml`: KML files from datasets
+
+- `outwrite`: Tables, but easier
+
+- `txt2qr`: Make arbitrary QR codes
+
+- `crossfold`: K-fold cross-validation in Stata
+
+- `knapsack`: Solve optimal allocation problems
+
+- `statflow`: Setup for sampling/attrition flow charts
+
+- `makeid`: Unique IDs that respect nesting
+
+---
+
+# Showcase: `forest`
+
+<img src="forest.png" alt="drawing" width="600"/>
+
+---
+
+# Showcase: `specc`
+
+<img src="specc.png" alt="drawing" width="800"/>
+
+---
+
+class: center, middle
+
+# Discussion
+
+---
+
+# These take a lot of work!
+
+**DIME Analytics code is _consumer code_**
+- Error messages are informative and guide a user towards correct usage
+- We use the code to teach standard processes to new hires
+- Lots of narrative documentation for every command on DIME Wiki
+- **These take about a year each to get to this point**
+
+**Ben's code is _not_**
+- You need to already know the method to use these commands, and there is not much documentation outside the helpfile
+- These are written between one day and one week
+- I promise there are functional bugs, but _no worse than if you wrote your own implementation_
+- SSC is not very good at _continuous deployment_, but GitHub is
+
+_Figuring out the syntax and functional boundaries in both cases is a careful balancing process... but these investments pay off!_
+
+**So these are all available ... what investments and standardizations do you want to make?**
 
 ---
 
