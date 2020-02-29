@@ -241,20 +241,65 @@ class: center, middle
 
 `net from https://github.com/bbdaniels/stata/raw/master/`
 
-All of these are on SSC:
+- `betterbar`: The bar graphs you always wanted
 
-- `dta2kml`:
-- `outwrite`:
-- `forest`:
-- `txt2qr`:
-- `crossfold`:
-- `knapsack`:
-- `statflow`:
-- `betterbar`:
-- `sumstat `:
-- `specc`:
-- `makeid`:
+- `sumstat `: Summary statistics with subgroups
 
+- `specc`: Specification curves automagically
+
+- `forest`: Multiple hypothesis visualization and adjustment
+
+- `dta2kml`: KML files from datasets
+
+- `outwrite`: Tables, but easier
+
+- `txt2qr`: Make arbitrary QR codes
+
+- `crossfold`: K-fold cross-validation in Stata
+
+- `knapsack`: Solve optimal allocation problems
+
+- `statflow`: Setup for sampling/attrition flow charts
+
+- `makeid`: Unique IDs that respect nesting
+
+---
+
+# Showcase: `forest`
+
+<img src="forest.png" alt="drawing" width="600"/>
+
+---
+
+# Showcase: `specc`
+
+<img src="specc.png" alt="drawing" width="800"/>
+
+---
+
+class: center, middle
+
+# Discussion
+
+---
+
+# These take a lot of work!
+
+**DIME Analytics code is _consumer code_**
+- Error messages are informative and guide a user towards correct usage
+- We use the code to teach standard processes to new hires
+- Lots of narrative documentation for every command on DIME Wiki
+- **These take about a year each to get to this point**
+
+**Ben's code is _not_**
+- You need to already know the method to use these commands, and there is not much documentation outside the helpfile
+- These are written between one day and one week
+- I promise there are functional bugs, but _no worse than if you wrote your own implementation_
+- SSC is not very good at _continuous deployment_, but GitHub is
+
+_Figuring out the syntax and functional boundaries in both cases is a careful balancing process... but these investments pay off!_
+
+**So these are all available ... what investments and standardizations do you want to make?**
 
 ---
 
