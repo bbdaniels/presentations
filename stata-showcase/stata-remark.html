@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Montserrat);
+      @import url(https://fonts.googleapis.com/css?family=Lato:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Fira+Mono:400,700,400italic);
+
+      body { font-family: 'Lato'; }
+      h1, h2, h3 {
+        font-family: 'Montserrat';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Fira Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Stata Commands for Process Standardization
+
+---
+
+# Outline
+
+**Introduction**
+
+**DIME Analytics packages**
+1. `ietoolkit`
+1. `iefieldkit`
+
+**Ben's Stata commands**
+1. GitHub resources
+1. Individual commands tour
+
+**Discussion**
+
+---
+
+# Introduction
+
+Why write Stata commands?
+
+Two major components: _workflow_ standardization and _output_ standardization
+
+Workflow standardization:
+
+- **Less code** for same result
+- **Same code** for same result
+
+Output standardization:
+
+- Less code for **same result**
+- Same code for **same result**
+
+---
+
+# Tradeoffs
+
+Why not write Stata commands?
+
+Two major tradeoffs: less learning at low level and less flexibility
+
+**Less low-level learning**
+
+Students will not directly learn to build up their own matrices,
+verify results by hand, and print outputs to LaTeX.
+(On the other hand, this is a steep learning curve...)
+
+**Less flexibility**
+
+In order to build and teach these tools effectively,
+all PIs have to be more or less happy with the same type of basic functions.
+This includes some management workflows as well as some outputs as you'll see next.
+
+---
+
+class: center, middle
+
+# DIME Analytics packages: `ietoolkit` and `iefieldkit`
+
+---
+
+# `ietoolkit`: commands for impact evaluations
+
+**Key idea: institutional memory in code**
+
+- Collectively DIME has a lot of experience, and DIME Analytics tasks often boil down to: "generate and disseminate institutional memory"
+- [DIME Wiki](https://dimewiki.worldbank.org) and [our book](https://worldbank.github.io/d4di/) are important resources for institutional memory
+- But what if we also build institutional memory into the **code** RAs use?
+- This is the objective of `ietoolkit` (and `iefieldkit`)
+
+**Resources**
+
+- [Blogpost](https://blogs.worldbank.org/impactevaluations/ie-analytics-introducing-ietoolkit)
+- [Homepage](https://worldbank.github.io/ietoolkit/)
+- [GitHub](https://github.com/worldbank/ietoolkit)
+- [Stata Conference Presentation](https://www.stata.com/meeting/chicago19/slides/chicago19_Bjarkefur.pdf)
+
+---
+
+# `ietoolkit` commands
+
+- `iebaltab`: Create baseline balance tables and export to LaTeX
+
+- `ieboilsave`: Make sure best practices for saving data are followed
+
+- `ieboilstart`: Make sure best practices for code initialization are followed
+
+- `ieddtab`: Estimate difference-in-difference models and export to LaTeX
+
+- `iedropone`: Make sure changes to data result in the expected change
+
+- `iefolder`: Make sure all projects follow the same folder structure
+
+- `iegitaddmd`: Utility for ensuring folder structure is git-compatible
+
+- `iegraph`: Graph common treatment-control comparisons as means
+
+- `iekdensity`: Graph common treatment-control comparisons as distributions
+
+- `iematch`: Implement matching ex-post for various scoring methods
+
+---
+
+# Showcase: `iefolder`
+
+- This is the flagship command for the suite. It sets up the `DataWork` folder, a standardized project folder structure for reproducible research.
+- In addition to setting up the `DataWork` folder, iefolder creates master do-files linking to all main folders in the folder structure.
+- These master do-files are updated whenever more rounds, units of observations, and subfolders are added to the project folder using this command.
+
+![](300px-Datawork.png)![](300px-FolderSurveyRound.png)
+
+---
+
+# `ietoolkit`: commands for data collection
+
+**Key idea: move human tasks out of code**
+
+- Data collection is a process that has traditionally suffered from low levels of documentation, standardization, and replicability
+- These commands automatically output human- _and_ machine-readable spreadsheet documentation as a functional part of the intended workflow
+- Example of using Stata to bring ideals of standardization and replicability to one of our core tasks that is usually considered less technical
+
+**Resources**
+
+- [Homepage](https://dimewiki.worldbank.org/iefieldkit)
+- [GitHub](https://github.com/worldbank/iefieldkit)
+- [Stata Conference Presentation](https://www.stata.com/meeting/chicago19/slides/chicago19_Daniels.pdf)
+
+---
+
+# `ietoolkit` commands
+
+- `ietestform`: Ensures that ODK (SurveyCTO) surveys are Stata-optimized
+
+- `ieduplicates`: Finds and documents duplicate observations and resolutions
+
+- `iecompdup`: Interactive support for identifying reasons for duplicate observations
+
+- `iecodebook apply`: Reads an Excel codebook that specifies renames, recodes, variable labels, and value labels, and applies them to the current dataset.
+
+- `iecodebook append`: Reads an Excel codebook that specifies how variables should be harmonized across two or more datasets - rename, recode, variable labels, and value labels - applies the harmonization, and appends the datasets.
+
+- `iecodebook export`: Creates an Excel codebook that describes the current dataset, and optionally produces an export version of the dataset with only variables used in specified dofiles.
+
+---
+
+# Showcase: `iecodebook`
+
+- Anyone can write thousands of `rename`, `recode`, and `label` commands.
+- Nobody wants to, and it is very hard to find errors later.
+- `iecodebook` enables this to be done for one or more datasets at a time,
+including making sure value labels harmonize across appending multiple rounds.
+- **Most importantly**, this is all done in a spreadsheet that anyone can read!
+
+In Stata, then, one line:
+```
+iecodebook append "survey1.dta" "survey2.dta" using "codebook.xlsx"
+```
+
+<img src="Append-complete.png" alt="drawing" width="800"/>
+
+---
+
+class: center, middle
+
+# Thank you!
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
