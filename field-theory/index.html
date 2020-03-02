@@ -48,7 +48,7 @@ class: center, middle
 
 ---
 
-# Who am I?
+# 👨🏻‍🏫 Who am I?
 
 My name is Benjamin Daniels. I have worked in large-scale field research
 on a number of projects over the last ~8 years. This includes classic surveys,
@@ -71,7 +71,7 @@ sharing time between DECHD and DIME.
 
 ---
 
-# Why are we talking about **field** research?
+# 🕵🏻‍♀️ Why are we talking about **field** research?
 
 I assume you all know impact evaluation _theory_ pretty well inside and out.
 It sounds nice and neat when you get it in a classroom format;
@@ -89,7 +89,7 @@ so think accordingly about your career choices!
 
 ---
 
-# Motivation for this lecture
+# 💡 Motivation for lecture
 
 **Why you should care:**
 
@@ -109,7 +109,7 @@ so think accordingly about your career choices!
 
 ---
 
-# What causes these dynamics?
+# 🔮 What causes these dynamics?
 
 **Who here has been on a field visit?**
 
@@ -136,7 +136,7 @@ class: center, middle
 
 ---
 
-# Handling data ethically
+# 💽 Handling data ethically
 
 **Think of research as a public service**
 
@@ -154,7 +154,7 @@ and they typically do so in trust that their information is used securely for th
 
 ---
 
-# Privacy and security
+# 🔐 Privacy and security
 
 **Handling personally-identifying information is common**
 
@@ -182,7 +182,7 @@ class: center, middle
 
 ---
 
-# Collaborating on code
+# 🎭 Collaborating on code
 
 **It is less and less common that work is done by one person alone in a room**
 
@@ -200,7 +200,7 @@ class: center, middle
 
 ---
 
-# Workflows to steal
+# 💡 Workflows to steal
 
 **File sharing: three types**
 
@@ -222,7 +222,7 @@ class: center, middle
 -
 ---
 
-# `ietoolkit`: commands for impact evaluations
+# 💾 `ietoolkit`: commands for impact evaluations
 
 **Key idea: institutional memory in code**
 
@@ -240,7 +240,7 @@ class: center, middle
 
 ---
 
-# Showcase: `iefolder`
+# 💾 Showcase: `iefolder`
 
 - This is the flagship command for the suite. It sets up the `DataWork` folder, a standardized project folder structure for reproducible research.
 - In addition to setting up the `DataWork` folder, iefolder creates master do-files linking to all main folders in the folder structure.
@@ -250,7 +250,7 @@ class: center, middle
 
 ---
 
-# `iefieldkit`: commands for data collection
+# 💾 `iefieldkit`: commands for data collection
 
 **Key idea: move human tasks out of code**
 
@@ -266,7 +266,7 @@ class: center, middle
 
 ---
 
-# Showcase: `iecodebook`
+# 💾 Showcase: `iecodebook`
 
 - Anyone can write thousands of `rename`, `recode`, and `label` commands.
 - Nobody wants to, and it is very hard to find errors later.
@@ -289,7 +289,7 @@ class: center, middle
 
 ---
 
-# Evaluating impact through research design
+# 👩🏽‍💻 Evaluating impact through research design
 
 **Usually, the research design is left to the PI,
 but it is very important for you to be familiar with major causal inference methods.**
@@ -309,7 +309,7 @@ in the field and in the data that nobody else has noticed yet...
 
 ---
 
-# Causal inference models
+# 📈 Causal inference models
 
 **I'm not going to review these in detail but you should:**
 
@@ -326,6 +326,76 @@ in the field and in the data that nobody else has noticed yet...
 - Synthetic controls
 
 **All of these can be _experimental_ or _quasi-experimental_!**
+
+---
+
+class: center, middle
+
+# Sampling, randomization, and power
+
+---
+
+# 🔎 Sampling
+
+**Sampling is how we pick what individuals/units to include in observation**
+
+- Has major implications for what we can say, and about _whom_
+- There is no such thing as "representative"
+- There is only "representative of _something_"
+- The broader that something is, the less detail we will likely have
+
+**Information → data abstraction strikes again....**
+
+- Is "representative of Country X" even a sensible metric?
+- How will you average rural and urban together, for example?
+- How can you even compare or combine two different households...?
+- Sampling is when you make that first, key abstraction,
+combining unique individuals into "groups" about which something can be said
+
+**Take this seriously, and think about what you want to say something about.
+Think about how to be specific enough to be credible but not too specific to be useful.**
+
+---
+
+# 🎲 Randomization
+
+**Randomization is how we pick what individuals/units to include in intervention**
+
+- Again, has major implications for what we can claim
+- _Lots_ of fairness and procedural concerns
+- People who you want to learn about may not make sense to randomize
+  - Particularly when you have small strata (female-head-of-household farmers...)
+
+**Several main methods**
+
+- Randomization in the lab (using Stata etc from here in D.C.)
+- Randomization in the field (using a public method)
+- Randomization as part of data collection (using a survey tool)
+
+**Each method's function has to be balanced with what is being implemented
+so that the process is fair and valid -- many of these projects involve giving
+valuable things to people who get lucky...**
+
+---
+
+# ⚖️ Power calculations
+
+**Power calculations let you determine the best use of limited resources**
+
+- Power calculations force you to think about the structure of your study
+- Don't typically rely on simple models like Stata's `power` command
+- Do the work and think through the sources of variation in your study
+
+**Usually this will show you what is useful complexity and what is not**
+
+- People like complicated designs and multi-arm trials
+- Often they do more harm than good by creating many small studies
+- Small studies are almost always upwardly biased in effect sizes when significant
+- Power for a single comparison usually takes ~150 clusters per treatment arm
+- But to _accurately_ estimate effects or interactions you need 4x that many or more...
+
+**In all cases it is important to think about how you are testing multiple outcomes,
+as these kinds of many-dimensional studies become more common.**
 
 ---
 
