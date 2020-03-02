@@ -177,6 +177,113 @@ and they typically do so in trust that their information is used securely for th
 
 class: center, middle
 
+# Collaborating on
+# code and data
+
+---
+
+# Collaborating on code
+
+**It is less and less common that work is done by one person alone in a room**
+
+- We have greatly advanced technology; it is not always wise to use it
+- More important than being fancy is being able to work with others
+- This especially includes others who have different skill sets than you
+
+**The new world is a world of standardization and collaboration**
+
+- _Workflows_ are the most important technology we have
+- Everyone on your team should know what and how to make their contributions
+- There are lots of work streams out there where you don't need to re-invent the wheel!
+
+---
+
+# Workflows to steal
+
+**File sharing: three types**
+
+- _Sync_: Everyone has the same files all the time
+- _Version Control_: Not everyone has the same files all the time
+- _Server Share_: There is only one file, everyone can access it
+
+**Documentation and decision-making**
+
+- Kanban boards or Glo Timelines: Good for project planning
+- GitHub Issues: Good for technical and code documentation
+- Dropbox Paper: Good for management/organization
+
+**Matching the method to the task is 95% of the challenge.**
+
+- Changing methods is hard further down the road
+- Changing organization is even harder...
+- Standardize as best as possible and improve project-by-project
+-
+---
+
+# `ietoolkit`: commands for impact evaluations
+
+**Key idea: institutional memory in code**
+
+- Collectively DIME has a lot of experience, and DIME Analytics tasks often boil down to: "generate and disseminate institutional memory"
+- [DIME Wiki](https://dimewiki.worldbank.org) and [our book](https://worldbank.github.io/d4di/) are important resources for institutional memory
+- But what if we also build institutional memory into the **code** RAs use?
+- This is the objective of `ietoolkit` (and `iefieldkit`)
+
+**Resources**
+
+- [Blogpost](https://blogs.worldbank.org/impactevaluations/ie-analytics-introducing-ietoolkit)
+- [Homepage](https://worldbank.github.io/ietoolkit/)
+- [GitHub](https://github.com/worldbank/ietoolkit)
+- [Stata Conference Presentation](https://www.stata.com/meeting/chicago19/slides/chicago19_Bjarkefur.pdf)
+
+---
+
+# Showcase: `iefolder`
+
+- This is the flagship command for the suite. It sets up the `DataWork` folder, a standardized project folder structure for reproducible research.
+- In addition to setting up the `DataWork` folder, iefolder creates master do-files linking to all main folders in the folder structure.
+- These master do-files are updated whenever more rounds, units of observations, and subfolders are added to the project folder using this command.
+
+![](300px-Datawork.png)![](300px-FolderSurveyRound.png)
+
+---
+
+# `iefieldkit`: commands for data collection
+
+**Key idea: move human tasks out of code**
+
+- Data collection is a process that has traditionally suffered from low levels of documentation, standardization, and replicability
+- These commands automatically output human- _and_ machine-readable spreadsheet documentation as a functional part of the intended workflow
+- Example of using Stata to bring ideals of standardization and replicability to one of our core tasks that is usually considered less technical
+
+**Resources**
+
+- [Homepage](https://dimewiki.worldbank.org/iefieldkit)
+- [GitHub](https://github.com/worldbank/iefieldkit)
+- [Stata Conference Presentation](https://www.stata.com/meeting/chicago19/slides/chicago19_Daniels.pdf)
+
+---
+
+# Showcase: `iecodebook`
+
+- Anyone can write thousands of `rename`, `recode`, and `label` commands.
+- Nobody wants to, and it is very hard to find errors later.
+- `iecodebook` enables this to be done for one or more datasets at a time,
+including making sure value labels harmonize across appending multiple rounds.
+- **Most importantly**, this is all done in a spreadsheet that anyone can read!
+
+In Stata, then, one line:
+```
+iecodebook append "survey1.dta" "survey2.dta" using "codebook.xlsx"
+```
+
+<img src="Append-complete.png" alt="drawing" width="800"/>
+
+---
+
+
+class: center, middle
+
 # Thank you!
 
     </textarea>
