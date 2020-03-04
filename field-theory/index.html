@@ -73,7 +73,7 @@ sharing time between DECHD and DIME.
 
 # 🕵🏻‍♀️ Why are we talking about **field** research?
 
-I assume you all know impact evaluation _theory_ pretty well inside and out.
+I will not talk about impact evaluation _theory_ but you should become familiar if you are not.
 It sounds nice and neat when you get it in a classroom format;
 the academic works that cover this material also tend to be very "clean".
 Some examples:
@@ -165,13 +165,13 @@ and they typically do so in trust that their information is used securely for th
 **You need to be a leader in proper handling of data**
 
 - IRB review and approval of processes is essential (messing this up is not fun...)
-- Ensure that you have secure storage and transfer processes (Box makes this easy)
+- Ensure that you have secure storage and transfer processes (check with institution)
 - Don't handle data you don't need, and create masked copies as soon as you can
 
 **This also means ensuring that you are _personally_ protected:**
 
 - Get yourself a _two-factor authentication_ program and enable it on all accounts (Google Authenticator, Authy, Lastpass)
-- Get yourself a _password manager_ so you can create secure passwords and share them with others (BitWarden, LastPass)
+- Get yourself a _password manager_ so you can create secure passwords and share them with others (Bitwarden, LastPass)
 
 ---
 
@@ -311,7 +311,7 @@ in the field and in the data that nobody else has noticed yet...
 
 # 📈 Causal inference models
 
-**I'm not going to review these in detail but you should:**
+**I'm not going to review these in detail but you should know:**
 
 - Cross-sectional
 
@@ -486,7 +486,7 @@ but many of these things will only be _information_. (Sound familiar?)
 
 **Technical preparation**
 
-- Translate the survey to mobile form
+- Translate the survey to digital form
 - Ensure the results are ready-to-use in statistical software ([`ietestform`](https://dimewiki.worldbank.org/wiki/ietestform))
 
 **Field preparation**
@@ -512,7 +512,7 @@ but many of these things will only be _information_. (Sound familiar?)
 
 **What do you have to do?**
 
-- Encryption at rest means that nobody can _read_ the file contents without a _key_
+- Encryption at rest prevents anyone from _reading_ the file contents without a _key_
 - If you lose the key, you lose the data
 - But if anyone else can read the data, you are violating your IRB...
 - Lots of tools/workflows to make this easy and safe
@@ -562,7 +562,7 @@ checking for spacing, numbering, coloring, picking fonts, etc...**
 
 **Break down workflows**
 
-- Intake: Structure and de-identify data so it can be shared and unencrypted
+- Intake: Structure and de-identify data so it can be shared unencrypted
   - No new variables, so this can be set up at the survey creation stage
 - Cleaning: Correct any field errors, identify unique IDs, flatten rosters
   - _Perfect_ labeling and documentation in Stata-compatible English
@@ -581,7 +581,7 @@ checking for spacing, numbering, coloring, picking fonts, etc...**
 - Do not produce do-files that don't run linearly
 - Use as many do-files as you need to keep tasks "modular" or "atomic"
   - One per exhibit (table/figure) is just fine!
-- Use master scripts to set global settings and model oprtion (controls etc.)
+- Use master scripts to set global settings and model options (controls etc.)
 
 **Version-control code and outputs**
 - Eliminate clutter: keep only working versions of code you want
