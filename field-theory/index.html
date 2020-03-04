@@ -522,6 +522,107 @@ but many of these things will only be _information_. (Sound familiar?)
 
 class: center, middle
 
+# Analyzing data
+
+---
+
+# 👩🏾‍💻 Analyzing data
+
+**Four "meta" tasks in data analysis**
+- Organizing your folder structures
+- Breaking down your workflows
+- Writing master scripts
+- Version-controlling code and outputs
+
+**One "meta-meta" task in data analysis**
+- **Do not** treat any single task as "something to get done"
+- Make sure you _learn and grow_ from every task
+- Presumably you want to do them again...
+- And, presumably, you want to become more senior...
+- The way to do this is to _understand and routinize_ tasks, at the micro-micro level
+- This will let you know if someone who reports to you is doing it right
+
+**Nothing is too minor for you to take seriously.
+If you come to my office you will see me searching individual records
+and re-writing individual tables by hand:
+checking for spacing, numbering, coloring, picking fonts, etc...**
+
+**This is the best signal of quality and effort you have!**
+
+---
+
+# 🧙🏼‍♂️ Organizing data analysis
+
+**Organize folder structures**
+
+- I highlighted `iefolder` earlier: this is what DIME uses in every project
+- Each "data source" gets its own intake and cleaning workflow
+- Then each analysis task gets its own construction and analysis workflow
+- You should have a "standard" folder structure for everything
+
+**Break down workflows**
+
+- Intake: Structure and de-identify data so it can be shared and unencrypted
+  - No new variables, so this can be set up at the survey creation stage
+- Cleaning: Correct any field errors, identify unique IDs, flatten rosters
+  - _Perfect_ labeling and documentation in Stata-compatible English
+- Construction: Create adjusted and derived indicators, combined datasets, etc.
+  - No limit on the number of constructed datasets, as long as well-documented
+- Analysis: Create outputs _only_, no new variables or recombinations of data
+  - Go back-and-forth between this and construction as you need things
+
+---
+
+# 🧹 Tidying your workflow
+
+**Write master scripts**
+- Master scripts serve as a code map for your project
+  - They are not enough, of course: provide a `README.md` file also
+- Do not produce do-files that don't run linearly
+- Use as many do-files as you need to keep tasks "modular" or "atomic"
+  - One per exhibit (table/figure) is just fine!
+- Use master scripts to set global settings and model oprtion (controls etc.)
+
+**Version-control code and outputs**
+- Eliminate clutter: keep only working versions of code you want
+- Delete code that is not in use "right now" indiscriminately
+- Manage your workflows and histories without entangling it in the work itself
+- No information in file names and no "run this, then that..."
+
+**You always have time to tidy up, it is just like "doing the dishes as you cook".**
+
+**Except in this case you have a sink of infinite size and it will get really ugly!**
+
+---
+
+class: center, middle
+
+# Writing up results
+
+---
+
+# 📝 Writing up results
+
+**Creating good-looking outputs**
+- Learn better image formats (PDF, PNG, EPS) and think about [design](http://socviz.co) ([Stata](https://graykimbrough.github.io/uncluttered-stata-graphs/))
+- Tables are a bit harder: [here's some tips](https://github.com/bbdaniels/stata-tables)
+- Again, attention to detail: [checklist](https://dimewiki.worldbank.org/wiki/Checklist:_Submit_Table)
+
+**Using dynamic documents**
+- Don't copy-and-paste outputs into results documentation
+- When results are updated, they should be pulled right into your publication
+- Gold standard: LaTeX (and online implementations like Overleaf)
+- Other methods: Dropbox Paper, React.js (this slideshow), GitHub Readme
+
+**Preparing a replication package**
+- Replication package has code, data, and documentation ready-to-run
+- [AEA policy](https://aeadataeditor.github.io/aea-de-guidance/) is the current standard for Econ publications
+- If you have worked the way I'm telling you, this will be _easy_
+
+---
+
+class: center, middle
+
 # Thank you!
 
     </textarea>
