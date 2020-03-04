@@ -38,7 +38,7 @@ class: center, middle
 #### Analyzing research data
 #### Publishing collaborative research
 
-(_[Stolen from myself and some other very bright people...](https://worldbank.github.io/d4di/)_)
+(_[Borrowed from myself and some other very bright people...](https://worldbank.github.io/d4di/)_)
 
 ---
 
@@ -396,6 +396,127 @@ valuable things to people who get lucky...**
 
 **In all cases it is important to think about how you are testing multiple outcomes,
 as these kinds of many-dimensional studies become more common.**
+
+---
+
+class: center, middle
+
+# Acquiring development data
+
+---
+
+# 🧮 Acquiring data
+
+**This is where things tend to get messy!**
+
+**Major questions:**
+
+- Where is data coming from?
+- Who owns data?
+- Who has other rights over information?
+
+**Major methods:**
+
+- Surveys (obviously)
+- Business records and "big data"
+- Government records
+
+**Key question: what is _data_?**
+
+You are going to get a lot of things that _look like_ data,
+but many of these things will only be _information_. (Sound familiar?)
+
+---
+
+# 🔏 Data ownership
+
+**Who owns data?**
+
+- The default is not always clear, and can vary by jurisdiction
+- Can be the data collector, including survey firm or government partner
+- Local laws (GDPR, Common Rule) can give rights to people who the data is about
+- If someone else is collecting or giving data, make sure ownership is clear
+
+**Whether or not you own data, make sure usage/licensing considers:**
+- Use for a particular project
+- Use beyond that project (general research)
+- Data storage, security, and retention
+- Publication or release of data
+- Ownership of derived or constructed datasets
+
+**Clarity is always best, and agreement language need not be hyper-legalistic!**
+
+[Here are lots of public resources and standard licenses and template agreements.](http://researchdata.ox.ac.uk/home/sharing-your-data/rights-licensing/)
+
+---
+
+# 👩‍👧‍👦 Collecting survey data
+
+**The "classic" method for doing a research study**
+
+- Targets the people you are interested in
+- Asks the questions you are interested in
+- Full control over sampling and follow-up
+
+**Still, doing surveys is hard**
+
+- The workload during fieldwork is really intense
+- You need to have a lot of groundwork done before "going to field"
+- There are always problems...
+
+**Three stages of preparation: academic, technical, and field**
+
+- Academic prep is making sure your questions and samples are right
+- Technical prep is making sure your tools and methods are ready
+- Field prep is making sure your people are ready
+- Think of the Iowa Caucuses... all can fail!
+
+---
+
+# 📲 Electronic surveys
+
+**Most surveys these days are "computer-assisted personal interviews" (CAPI)**
+
+- ODK is the biggest class, of which SurveyCTO is one of the most popular
+
+**Academic preparation**
+
+- Design the survey on paper and complete sampling and power calculations
+- Pilot the survey for _content_ so you know it works smoothly
+
+**Technical preparation**
+
+- Translate the survey to mobile form
+- Ensure the results are ready-to-use in statistical software ([`ietestform`](https://dimewiki.worldbank.org/wiki/ietestform))
+
+**Field preparation**
+
+- Train all enumerators on digital data entry and pilot the elctronic survey
+- Set up back-checks, data validation, and high-frequency checks ([`ieduplicates`](https://dimewiki.worldbank.org/wiki/ieduplicates))
+
+**Only then are you ready to go to field...**
+
+---
+
+# 🔒 Data security redux
+
+**We mentioned this briefly earlier, time for more details!**
+
+- Strong, unique passwords are a _must-have_ for all services
+- Get set up with two-factor authentication and password management
+
+**Now you must make sure your data is _encrypted_**
+
+- Most services take care of "encryption in transit" (to & from servers)
+- But few will "encrypt at rest" (when they are on servers)
+
+**What do you have to do?**
+
+- Encryption at rest means that nobody can _read_ the file contents without a _key_
+- If you lose the key, you lose the data
+- But if anyone else can read the data, you are violating your IRB...
+- Lots of tools/workflows to make this easy and safe
+- Not going to give details right now, as it depends a lot on your software choice
 
 ---
 
